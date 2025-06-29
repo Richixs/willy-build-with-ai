@@ -40,7 +40,7 @@ Sigue estos pasos para tener una copia del proyecto funcionando en tu máquina l
 
 1.  **Clona el repositorio:**
     ```sh
-    git clone [https://github.com/tu_usuario/willy-build-with-ai.git](https://github.com/tu_usuario/willy-build-with-ai.git)
+    git clone https://github.com/tu_usuario/willy-build-with-ai.git
     cd willy-build-with-ai
     ```
     2.  **Obtén una Clave de API de Gemini:**
