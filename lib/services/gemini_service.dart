@@ -30,14 +30,14 @@ class GeminiService {
     required String text,
     Uint8List? imageBytes,
   }) async {
-    const systemInstruction = """Eres un experto en el idioma español. Tu tarea es analizar texto en español en busca de errores gramaticales, de coherencia, puntuación y acentuación. Proporciona consejos constructivos para ayudar al usuario a mejorar su escritura.
+    const systemInstruction = """Eres un experto en el idioma español. Tu tarea es analizar texto en español en busca de errores gramaticales, ortograficos, de coherencia, puntuación y acentuación. Proporciona consejos constructivos para ayudar al usuario a mejorar su escritura.
 IMPORTANTE: NO proporciones la versión corregida del texto bajo ninguna circunstancia. En su lugar, da una lista de sugerencias y pistas, explicando el 'porqué' de cada una. Por ejemplo, si ves 'el agua es frio', podrías sugerir 'Pista: El sustantivo "agua" es femenino, por lo que los adjetivos que lo describen también deben ser femeninos. Intenta cambiar "frio" para que concuerde.'.
 DEBES responder con un objeto JSON con una única clave "tips", que debe ser una cadena de texto que contenga una lista con viñetas (usando '- ' al principio de cada línea) de tus sugerencias. Si el texto es perfecto, el valor de 'tips' debe ser un mensaje de confirmación en español.
 
 Aquí está el texto a analizar:
 """;
 
-    final fullPrompt = systemInstruction + (imageBytes != null ? "Analiza el texto de la imagen." : text);
+    final fullPrompt = systemInstruction + (imageBytes != null ? "" : text);
 
     final imageList = imageBytes != null ? [imageBytes] : null;
 
