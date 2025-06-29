@@ -28,7 +28,12 @@ class _ChatViewState extends State<ChatView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(centerTitle: true, title: Text('Willy Chat')),
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text('Willy Chat', style: const TextStyle(color: Color(0xFF1F2937))),
+        backgroundColor: const Color(0xFF7DD3FC),
+        iconTheme: const IconThemeData(color: Color(0xFF1F2937)),
+      ),
       body: _buildUI(),
     );
   }
