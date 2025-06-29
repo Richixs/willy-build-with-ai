@@ -34,15 +34,18 @@ class _ChatViewState extends State<ChatView> {
   }
 
   Widget _buildUI() {
-    return DashChat(
-      inputOptions: InputOptions(
-        trailing: [
-          IconButton(onPressed: _sendMediaMessage, icon: Icon(Icons.image)),
-        ],
+    return Container(
+      color: const Color(0xFFF0F4F8),
+      child: DashChat(
+        inputOptions: InputOptions(
+          trailing: [
+            IconButton(onPressed: _sendMediaMessage, icon: Icon(Icons.image)),
+          ],
+        ),
+        currentUser: currentUser,
+        onSend: onSend,
+        messages: messages,
       ),
-      currentUser: currentUser,
-      onSend: onSend,
-      messages: messages,
     );
   }
 
