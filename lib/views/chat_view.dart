@@ -21,8 +21,8 @@ class _ChatViewState extends State<ChatView> {
   ChatUser currentUser = ChatUser(id: '0', firstName: 'User');
   ChatUser geminiUser = ChatUser(
     id: '1',
-    firstName: 'Gemini',
-    profileImage: 'https://www.gemini.com/static/images/gemini-logo.png',
+    firstName: 'Willy',
+    profileImage: 'https://i.imgur.com/SJ53unc.jpeg',
   );
 
   @override
@@ -48,6 +48,10 @@ class _ChatViewState extends State<ChatView> {
     return Container(
       color: const Color(0xFFF0F4F8),
       child: DashChat(
+        messageOptions: MessageOptions(
+          currentUserContainerColor: Color(0xFF7DD3FC),
+          containerColor: Color(0xFFFFFFFF),
+        ),
         inputOptions: InputOptions(
           inputDecoration: InputDecoration(
             filled: true,
