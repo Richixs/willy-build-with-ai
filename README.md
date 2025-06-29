@@ -60,10 +60,7 @@ Sigue estos pasos para tener una copia del proyecto funcionando en tu máquina l
     flutter pub get
     ```
 
-5.  **Ejecuta la aplicación:**
-    ```sh
-    flutter run
-    ```
+5.  **Ejecuta la aplicación: main.dart**
 
 ¡Y eso es todo! La aplicación debería compilarse y ejecutarse en tu emulador o dispositivo físico.
 
