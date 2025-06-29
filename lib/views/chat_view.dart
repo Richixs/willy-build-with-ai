@@ -49,8 +49,31 @@ class _ChatViewState extends State<ChatView> {
       color: const Color(0xFFF0F4F8),
       child: DashChat(
         inputOptions: InputOptions(
+          inputDecoration: InputDecoration(
+            filled: true,
+            fillColor: Color(0xFFFFFFFF),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(8.0),
+              borderSide: BorderSide.none,
+            ),
+            contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            hintText: 'Enviar mensaje a Willy',
+          ),
+          inputToolbarPadding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
           trailing: [
-            IconButton(onPressed: _sendMediaMessage, icon: Icon(Icons.image)),
+            Padding(
+              padding: const EdgeInsets.only(left: 8.0, right: 0.0),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Color(0xFFF472B6),
+                  shape: BoxShape.circle,
+                ),
+                child: IconButton(
+                  onPressed: _sendMediaMessage,
+                  icon: Icon(Icons.image, color: Colors.white),
+                ),
+              ),
+            ),
           ],
         ),
         currentUser: currentUser,
