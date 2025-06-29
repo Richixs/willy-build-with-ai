@@ -21,28 +21,69 @@ class _ChatViewState extends State<ChatView> {
   ChatUser currentUser = ChatUser(id: '0', firstName: 'User');
   ChatUser geminiUser = ChatUser(
     id: '1',
-    firstName: 'Gemini',
-    profileImage: 'https://www.gemini.com/static/images/gemini-logo.png',
+    firstName: 'Willy',
+    profileImage: 'https://i.imgur.com/SJ53unc.jpeg',
   );
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(centerTitle: true, title: Text('Willy Chat')),
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(
+          'Willy Chat',
+          style: const TextStyle(
+            color: Color(0xFF1F2937),
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        backgroundColor: const Color(0xFF7DD3FC),
+        iconTheme: const IconThemeData(color: Color(0xFF1F2937)),
+      ),
       body: _buildUI(),
     );
   }
 
   Widget _buildUI() {
-    return DashChat(
-      inputOptions: InputOptions(
-        trailing: [
-          IconButton(onPressed: _sendMediaMessage, icon: Icon(Icons.image)),
-        ],
+    return Container(
+      color: const Color(0xFFF0F4F8),
+      child: DashChat(
+        messageOptions: MessageOptions(
+          currentUserContainerColor: Color(0xFF7DD3FC),
+          containerColor: Color(0xFFFFFFFF),
+        ),
+        inputOptions: InputOptions(
+          inputDecoration: InputDecoration(
+            filled: true,
+            fillColor: Color(0xFFFFFFFF),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(8.0),
+              borderSide: BorderSide.none,
+            ),
+            contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            hintText: 'Enviar mensaje a Willy',
+          ),
+          inputToolbarPadding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+          trailing: [
+            Padding(
+              padding: const EdgeInsets.only(left: 8.0, right: 0.0),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Color(0xFFF472B6),
+                  shape: BoxShape.circle,
+                ),
+                child: IconButton(
+                  onPressed: _sendMediaMessage,
+                  icon: Icon(Icons.image, color: Colors.white),
+                ),
+              ),
+            ),
+          ],
+        ),
+        currentUser: currentUser,
+        onSend: onSend,
+        messages: messages,
       ),
-      currentUser: currentUser,
-      onSend: onSend,
-      messages: messages,
     );
   }
 
