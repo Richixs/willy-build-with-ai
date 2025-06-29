@@ -30,7 +30,13 @@ class _ChatViewState extends State<ChatView> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Willy Chat', style: const TextStyle(color: Color(0xFF1F2937))),
+        title: Text(
+          'Willy Chat',
+          style: const TextStyle(
+            color: Color(0xFF1F2937),
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         backgroundColor: const Color(0xFF7DD3FC),
         iconTheme: const IconThemeData(color: Color(0xFF1F2937)),
       ),
